@@ -70,7 +70,7 @@ echo "<script>alert('Something went wrong. Please try again');</script>";
           <div class="footer_widget">
             <p>Connect with Us:</p>
             <ul>
-              <li><a href="#"><i class="fa fa-facebook-square" aria-hidden="true"></i></a></li>
+              <li><a href="https://www.facebook.com/LalaCabsKenya/"><i class="fa fa-facebook-square" aria-hidden="true"></i></a></li>
               <li><a href="#"><i class="fa fa-twitter-square" aria-hidden="true"></i></a></li>
               <li><a href="#"><i class="fa fa-linkedin-square" aria-hidden="true"></i></a></li>
               <li><a href="#"><i class="fa fa-google-plus-square" aria-hidden="true"></i></a></li>
@@ -79,7 +79,7 @@ echo "<script>alert('Something went wrong. Please try again');</script>";
           </div>
         </div>
         <div class="col-md-6 col-md-pull-6">
-          <p class="copy-right">Copyright &copy; 2019 Car Rental Portal. All Rights Reserved</p>
+          <p class="copy-right">Copyright &copy; 2020   Lala Cabs All Rights Reserved.</p>
         </div>
       </div>
     </div>

@@ -12,7 +12,7 @@ error_reporting(0);
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="keywords" content="">
 <meta name="description" content="">
-<title>Car Rental Portal | Car Listing</title>
+<title>Lala Cabs | Car Listing</title>
 <!--Bootstrap -->
 <link rel="stylesheet" href="assets/css/bootstrap.min.css" type="text/css">
 <!--Custome Style -->
@@ -29,12 +29,12 @@ error_reporting(0);
 
 <!-- SWITCHER -->
 		<link rel="stylesheet" id="switcher-css" type="text/css" href="assets/switcher/css/switcher.css" media="all" />
-		<link rel="alternate stylesheet" type="text/css" href="assets/switcher/css/red.css" title="red" media="all" data-default-color="true" />
+		<link rel="alternate stylesheet" type="text/css" href="assets/switcher/css/red.css" title="red" media="all"  />
 		<link rel="alternate stylesheet" type="text/css" href="assets/switcher/css/orange.css" title="orange" media="all" />
 		<link rel="alternate stylesheet" type="text/css" href="assets/switcher/css/blue.css" title="blue" media="all" />
 		<link rel="alternate stylesheet" type="text/css" href="assets/switcher/css/pink.css" title="pink" media="all" />
 		<link rel="alternate stylesheet" type="text/css" href="assets/switcher/css/green.css" title="green" media="all" />
-		<link rel="alternate stylesheet" type="text/css" href="assets/switcher/css/purple.css" title="purple" media="all" />
+		<link rel="alternate stylesheet" type="text/css" href="assets/switcher/css/purple.css" title="purple" media="all" data-default-color="true"/>
         
 <!-- Fav and touch icons -->
 <link rel="apple-touch-icon-precomposed" sizes="144x144" href="assets/images/favicon-icon/apple-touch-icon-144-precomposed.png">
@@ -47,7 +47,7 @@ error_reporting(0);
 <body>
 
 <!-- Start Switcher -->
-<?php include('includes/colorswitcher.php');?>
+<!-- <?php include('includes/colorswitcher.php');?> -->
 <!-- /Switcher -->  
 
 <!--Header--> 
@@ -88,11 +88,11 @@ $query->execute();
 $results=$query->fetchAll(PDO::FETCH_OBJ);
 $cnt=$query->rowCount();
 ?>
-<p><span><?php echo htmlentities($cnt);?> Listings</span></p>
+<p><span><?php echo htmlentities($cnt);?> Vehicles Available</span></p>
 </div>
 </div>
 
-<?php $sql = "SELECT neorent_vehicles_table.*,neorent_vehiclebrands_table.BrandName,neorent_vehiclebrands_table.id as bid  from neorent_vehicles_table join neorent_vehiclebrands_table on neorent_vehiclebrands_table.id=neorent_vehicles_table.VehiclesBrand";
+<?php $sql = "SELECT neorent_vehicles_table.*,neorent_vehiclebrands_table.BrandName,neorent_vehiclebrands_table.id as bid  from neorent_vehicles_table join neorent_vehiclebrands_table on neorent_vehiclebrands_table.id=neorent_vehicles_table.VehiclesBrand ORDER BY bid DESC";
 $query = $dbh -> prepare($sql);
 $query->execute();
 $results=$query->fetchAll(PDO::FETCH_OBJ);
@@ -106,7 +106,7 @@ foreach($results as $result)
           </div>
           <div class="product-listing-content">
             <h5><a href="vehical-details.php?vhid=<?php echo htmlentities($result->id);?>"><?php echo htmlentities($result->BrandName);?> , <?php echo htmlentities($result->VehiclesTitle);?></a></h5>
-            <p class="list-price">$<?php echo htmlentities($result->PricePerDay);?> Per Day</p>
+            <p class="list-price">Ksh<?php echo htmlentities($result->PricePerDay);?> Per Day</p>
             <ul>
               <li><i class="fa fa-user" aria-hidden="true"></i><?php echo htmlentities($result->SeatingCapacity);?> seats</li>
               <li><i class="fa fa-calendar" aria-hidden="true"></i><?php echo htmlentities($result->ModelYear);?> model</li>

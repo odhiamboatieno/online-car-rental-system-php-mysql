@@ -32,7 +32,7 @@ $msg="Vehicle  record deleted successfully";
 	<meta name="author" content="">
 	<meta name="theme-color" content="#3e454c">
 	
-	<title>Car Rental Portal |Admin Manage Vehicles   </title>
+	<title>Lala Cabs |Admin Manage Vehicles   </title>
 
 	<!-- Font awesome -->
 	<link rel="stylesheet" href="css/font-awesome.min.css">

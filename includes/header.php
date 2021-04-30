@@ -6,24 +6,37 @@
         <div class="col-sm-3 col-md-2">
           <div class="logo"> <a href="index.php"><img src="assets/images/logo.png" alt="image"/></a> </div>
         </div>
+         <?php 
+$pagetype=$_GET['type'];
+$sql = "SELECT Address,EmailId,ContactNo from neorent_contactus_table";
+$query = $dbh -> prepare($sql);
+$query->bindParam(':pagetype',$pagetype,PDO::PARAM_STR);
+$query->execute();
+$results=$query->fetchAll(PDO::FETCH_OBJ);
+$cnt=1;
+if($query->rowCount() > 0)
+{
+foreach($results as $result)
+{ ?>
         <div class="col-sm-9 col-md-10">
           <div class="header_info">
             <div class="header_widgets">
               <div class="circle_icon"> <i class="fa fa-envelope" aria-hidden="true"></i> </div>
               <p class="uppercase_text">For Support Mail us : </p>
-              <a href="mailto:info@neocarentals.com">info@neocarentals.com</a> </div>
+              <a href="mailto:<?php echo htmlentities($result->EmailId); ?>"><?php echo htmlentities($result->EmailId); ?></a> </div>
             <div class="header_widgets">
               <div class="circle_icon"> <i class="fa fa-phone" aria-hidden="true"></i> </div>
               <p class="uppercase_text">Service Helpline Call Us: </p>
-              <a href="tel:+254797049288">+254797049288</a> </div>
+              <a href="tel:<?php   echo htmlentities($result->ContactNo); ?>"><?php   echo htmlentities($result->ContactNo); ?></a> </div>
             <div class="social-follow">
               <ul>
-                <li><a href="#"><i class="fa fa-facebook-square" aria-hidden="true"></i></a></li>
+                <li><a href="https://www.facebook.com/LalaCabsKenya/"><i class="fa fa-facebook-square" aria-hidden="true"></i></a></li>
                 <li><a href="#"><i class="fa fa-twitter-square" aria-hidden="true"></i></a></li>
                 <li><a href="#"><i class="fa fa-linkedin-square" aria-hidden="true"></i></a></li>
                 <li><a href="#"><i class="fa fa-google-plus-square" aria-hidden="true"></i></a></li>
                 <li><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
               </ul>
+                    <?php }} ?>
             </div>
    <?php   if(strlen($_SESSION['login'])==0)
 	{	
@@ -32,7 +45,7 @@
 <?php }
 else{ 
 
-echo "Our Pleasure to have you at Neocarentals";
+echo "";
  } ?>
           </div>
         </div>

@@ -1,21 +1,23 @@
-<?php 
+<?php
 session_start();
 include('includes/config.php');
 error_reporting(0);
 if(isset($_POST['submit']))
 {
 $fromdate=$_POST['fromdate'];
-$todate=$_POST['todate']; 
+$todate=$_POST['todate'];
+$HireMode=$_POST['HireMode'];
 $message=$_POST['message'];
 $useremail=$_SESSION['login'];
 $status=0;
 $vhid=$_GET['vhid'];
-$sql="INSERT INTO  neorent_booking_table(userEmail,VehicleId,FromDate,ToDate,message,Status) VALUES(:useremail,:vhid,:fromdate,:todate,:message,:status)";
+$sql="INSERT INTO  neorent_booking_table(userEmail,VehicleId,FromDate,ToDate,HireMode,message,Status) VALUES(:useremail,:vhid,:fromdate,:todate,:HireMode,:message,:status)";
 $query = $dbh->prepare($sql);
 $query->bindParam(':useremail',$useremail,PDO::PARAM_STR);
 $query->bindParam(':vhid',$vhid,PDO::PARAM_STR);
 $query->bindParam(':fromdate',$fromdate,PDO::PARAM_STR);
 $query->bindParam(':todate',$todate,PDO::PARAM_STR);
+$query->bindParam(':HireMode',$HireMode,PDO::PARAM_STR);
 $query->bindParam(':message',$message,PDO::PARAM_STR);
 $query->bindParam(':status',$status,PDO::PARAM_STR);
 $query->execute();
@@ -24,7 +26,7 @@ if($lastInsertId)
 {
 echo "<script>alert('Booking successfull.');</script>";
 }
-else 
+else
 {
 echo "<script>alert('Something went wrong. Please try again');</script>";
 }
@@ -59,12 +61,12 @@ echo "<script>alert('Something went wrong. Please try again');</script>";
 
 <!-- SWITCHER -->
 		<link rel="stylesheet" id="switcher-css" type="text/css" href="assets/switcher/css/switcher.css" media="all" />
-		<link rel="alternate stylesheet" type="text/css" href="assets/switcher/css/red.css" title="red" media="all" data-default-color="true" />
+		<link rel="alternate stylesheet" type="text/css" href="assets/switcher/css/red.css" title="red" media="all"  />
 		<link rel="alternate stylesheet" type="text/css" href="assets/switcher/css/orange.css" title="orange" media="all" />
 		<link rel="alternate stylesheet" type="text/css" href="assets/switcher/css/blue.css" title="blue" media="all" />
 		<link rel="alternate stylesheet" type="text/css" href="assets/switcher/css/pink.css" title="pink" media="all" />
 		<link rel="alternate stylesheet" type="text/css" href="assets/switcher/css/green.css" title="green" media="all" />
-		<link rel="alternate stylesheet" type="text/css" href="assets/switcher/css/purple.css" title="purple" media="all" />
+		<link rel="alternate stylesheet" type="text/css" href="assets/switcher/css/purple.css" title="purple" media="all" data-default-color="true"/>
 <link rel="apple-touch-icon-precomposed" sizes="144x144" href="assets/images/favicon-icon/apple-touch-icon-144-precomposed.png">
 <link rel="apple-touch-icon-precomposed" sizes="114x114" href="assets/images/favicon-icon/apple-touch-icon-114-precomposed.html">
 <link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/images/favicon-icon/apple-touch-icon-72-precomposed.png">
@@ -75,16 +77,16 @@ echo "<script>alert('Something went wrong. Please try again');</script>";
 <body>
 
 <!-- Start Switcher -->
-<?php include('includes/colorswitcher.php');?>
-<!-- /Switcher -->  
+<!-- <?php include('includes/colorswitcher.php');?> -->
+<!-- /Switcher -->
 
 <!--Header-->
 <?php include('includes/header.php');?>
-<!-- /Header --> 
+<!-- /Header -->
 
 <!--Listing-Image-Slider-->
 
-<?php 
+<?php
 $vhid=intval($_GET['vhid']);
 $sql = "SELECT neorent_vehicles_table.*,neorent_vehiclebrands_table.BrandName,neorent_vehiclebrands_table.id as bid  from neorent_vehicles_table join neorent_vehiclebrands_table on neorent_vehiclebrands_table.id=neorent_vehicles_table.VehiclesBrand where neorent_vehicles_table.id=:vhid";
 $query = $dbh -> prepare($sql);
@@ -95,9 +97,9 @@ $cnt=1;
 if($query->rowCount() > 0)
 {
 foreach($results as $result)
-{  
-$_SESSION['brndid']=$result->bid;  
-?>  
+{
+$_SESSION['brndid']=$result->bid;
+?>
 
 <section id="listing_img_slider">
   <div><img src="admin/img/vehicleimages/<?php echo htmlentities($result->Vimage1);?>" class="img-responsive" alt="image" width="900" height="560"></div>
@@ -124,8 +126,8 @@ $_SESSION['brndid']=$result->bid;
       </div>
       <div class="col-md-3">
         <div class="price_info">
-          <p>$<?php echo htmlentities($result->PricePerDay);?> </p>Per Day
-         
+          <p>Ksh <?php echo htmlentities($result->PricePerDay);?> </p>Per Day
+
         </div>
       </div>
     </div>
@@ -133,7 +135,7 @@ $_SESSION['brndid']=$result->bid;
       <div class="col-md-9">
         <div class="main_features">
           <ul>
-          
+
             <li> <i class="fa fa-calendar" aria-hidden="true"></i>
               <h5><?php echo htmlentities($result->ModelYear);?></h5>
               <p>Reg.Year</p>
@@ -142,7 +144,7 @@ $_SESSION['brndid']=$result->bid;
               <h5><?php echo htmlentities($result->FuelType);?></h5>
               <p>Fuel Type</p>
             </li>
-       
+
             <li> <i class="fa fa-user-plus" aria-hidden="true"></i>
               <h5><?php echo htmlentities($result->SeatingCapacity);?></h5>
               <p>Seats</p>
@@ -150,25 +152,25 @@ $_SESSION['brndid']=$result->bid;
           </ul>
         </div>
         <div class="listing_more_info">
-          <div class="listing_detail_wrap"> 
+          <div class="listing_detail_wrap">
             <!-- Nav tabs -->
             <ul class="nav nav-tabs gray-bg" role="tablist">
               <li role="presentation" class="active"><a href="#vehicle-overview " aria-controls="vehicle-overview" role="tab" data-toggle="tab">Vehicle Overview </a></li>
-          
+
               <li role="presentation"><a href="#accessories" aria-controls="accessories" role="tab" data-toggle="tab">Accessories</a></li>
             </ul>
-            
+
             <!-- Tab panes -->
-            <div class="tab-content"> 
+            <div class="tab-content">
               <!-- vehicle-overview -->
               <div role="tabpanel" class="tab-pane active" id="vehicle-overview">
-                
+
                 <p><?php echo htmlentities($result->VehiclesOverview);?></p>
               </div>
-              
-              
+
+
               <!-- Accessories -->
-              <div role="tabpanel" class="tab-pane" id="accessories"> 
+              <div role="tabpanel" class="tab-pane" id="accessories">
                 <!--Accessories-->
                 <table>
                   <thead>
@@ -183,7 +185,7 @@ $_SESSION['brndid']=$result->bid;
 {
 ?>
                       <td><i class="fa fa-check" aria-hidden="true"></i></td>
-<?php } else { ?> 
+<?php } else { ?>
    <td><i class="fa fa-close" aria-hidden="true"></i></td>
    <?php } ?> </tr>
 
@@ -208,7 +210,7 @@ $_SESSION['brndid']=$result->bid;
 <td><i class="fa fa-close" aria-hidden="true"></i></td>
 <?php } ?>
 </tr>
-                   
+
 
 <tr>
 
@@ -222,7 +224,7 @@ $_SESSION['brndid']=$result->bid;
 <td><i class="fa fa-close" aria-hidden="true"></i></td>
 <?php } ?>
 </tr>
-                   
+
  <tr>
 <td>CD Player</td>
 <?php if($result->CDPlayer==1)
@@ -287,7 +289,7 @@ $_SESSION['brndid']=$result->bid;
 <td><i class="fa fa-close" aria-hidden="true"></i></td>
 <?php } ?>
  </tr>
- 
+
  <tr>
  <td>Passenger Airbag</td>
  <?php if($result->PassengerAirbag==1)
@@ -315,15 +317,15 @@ $_SESSION['brndid']=$result->bid;
               </div>
             </div>
           </div>
-          
+
         </div>
 <?php }} ?>
-   
+
       </div>
-      
+
       <!--Side-Bar-->
       <aside class="col-md-3">
-      
+
         <div class="share_vehicle">
           <p>Share: <a href="#"><i class="fa fa-facebook-square" aria-hidden="true"></i></a> <a href="#"><i class="fa fa-twitter-square" aria-hidden="true"></i></a> <a href="#"><i class="fa fa-linkedin-square" aria-hidden="true"></i></a> <a href="#"><i class="fa fa-google-plus-square" aria-hidden="true"></i></a> </p>
         </div>
@@ -332,11 +334,19 @@ $_SESSION['brndid']=$result->bid;
             <h5><i class="fa fa-envelope" aria-hidden="true"></i>Book Now</h5>
           </div>
           <form method="post">
+           <div class="form-group select">
+                <select class="form-control" name="HireMode">
+                  <option>Mode Of Hire</option>
+<option value="Self Drive">Self Drive</option>
+<option value="Sheffered">Sheffered</option>
+
+                </select>
+              </div>
             <div class="form-group">
-              <input type="text" class="form-control" name="fromdate" placeholder="From Date(dd/mm/yyyy)" required>
+              <input type="date" class="form-control" name="fromdate" placeholder="From Date(dd/mm/yyyy)" required>
             </div>
             <div class="form-group">
-              <input type="text" class="form-control" name="todate" placeholder="To Date(dd/mm/yyyy)" required>
+              <input type="date" class="form-control" name="todate" placeholder="To Date(dd/mm/yyyy)" required>
             </div>
             <div class="form-group">
               <textarea rows="4" class="form-control" name="message" placeholder="Message" required></textarea>
@@ -353,17 +363,17 @@ $_SESSION['brndid']=$result->bid;
           </form>
         </div>
       </aside>
-      <!--/Side-Bar--> 
+      <!--/Side-Bar-->
     </div>
-    
+
     <div class="space-20"></div>
     <div class="divider"></div>
-    
+
     <!--Similar-Cars-->
     <div class="similar_cars">
       <h3>Similar Cars</h3>
       <div class="row">
-<?php 
+<?php
 $bid=$_SESSION['brndid'];
 $sql="SELECT neorent_vehicles_table.VehiclesTitle,neorent_vehicles_table.PlateNumber,neorent_vehiclebrands_table.BrandName,neorent_vehicles_table.PricePerDay,neorent_vehicles_table.FuelType,neorent_vehicles_table.ModelYear,neorent_vehicles_table.id,neorent_vehicles_table.SeatingCapacity,neorent_vehicles_table.VehiclesOverview,neorent_vehicles_table.Vimage1 from neorent_vehicles_table join neorent_vehiclebrands_table on neorent_vehiclebrands_table.id=neorent_vehicles_table.VehiclesBrand where neorent_vehicles_table.VehiclesBrand=:bid";
 $query = $dbh -> prepare($sql);
@@ -374,17 +384,17 @@ $cnt=1;
 if($query->rowCount() > 0)
 {
 foreach($results as $result)
-{ ?>      
+{ ?>
         <div class="col-md-3 grid_listing">
           <div class="product-listing-m gray-bg">
             <div class="product-listing-img"> <a href="vehical-details.php?vhid=<?php echo htmlentities($result->id);?>"><img src="admin/img/vehicleimages/<?php echo htmlentities($result->Vimage1);?>" class="img-responsive" alt="image" /> </a>
             </div>
             <div class="product-listing-content">
               <h5><a href="vehical-details.php?vhid=<?php echo htmlentities($result->id);?>"><?php echo htmlentities($result->BrandName);?> , <?php echo htmlentities($result->VehiclesTitle);?>, <?php echo htmlentities($result->PlateNumber);?></a></h5>
-              <p class="list-price">$<?php echo htmlentities($result->PricePerDay);?></p>
-          
+              <p class="list-price">Ksh <?php echo htmlentities($result->PricePerDay);?> /Day</p>
+
               <ul class="features_list">
-                
+
              <li><i class="fa fa-user" aria-hidden="true"></i><?php echo htmlentities($result->SeatingCapacity);?> seats</li>
                 <li><i class="fa fa-calendar" aria-hidden="true"></i><?php echo htmlentities($result->ModelYear);?> model</li>
                 <li><i class="fa fa-car" aria-hidden="true"></i><?php echo htmlentities($result->FuelType);?></li>
@@ -392,42 +402,42 @@ foreach($results as $result)
             </div>
           </div>
         </div>
- <?php }} ?>       
+ <?php }} ?>
 
       </div>
     </div>
-    <!--/Similar-Cars--> 
-    
+    <!--/Similar-Cars-->
+
   </div>
 </section>
-<!--/Listing-detail--> 
+<!--/Listing-detail-->
 
 <!--Footer -->
 <?php include('includes/footer.php');?>
-<!-- /Footer--> 
+<!-- /Footer-->
 
 <!--Back to top-->
 <div id="back-top" class="back-top"> <a href="#top"><i class="fa fa-angle-up" aria-hidden="true"></i> </a> </div>
-<!--/Back to top--> 
+<!--/Back to top-->
 
 <!--Login-Form -->
 <?php include('includes/login.php');?>
-<!--/Login-Form --> 
+<!--/Login-Form -->
 
 <!--Register-Form -->
 <?php include('includes/registration.php');?>
 
-<!--/Register-Form --> 
+<!--/Register-Form -->
 
 <!--Forgot-password-Form -->
 <?php include('includes/forgotpassword.php');?>
 
 <script src="assets/js/jquery.min.js"></script>
-<script src="assets/js/bootstrap.min.js"></script> 
-<script src="assets/js/interface.js"></script> 
+<script src="assets/js/bootstrap.min.js"></script>
+<script src="assets/js/interface.js"></script>
 <script src="assets/switcher/js/switcher.js"></script>
-<script src="assets/js/bootstrap-slider.min.js"></script> 
-<script src="assets/js/slick.min.js"></script> 
+<script src="assets/js/bootstrap-slider.min.js"></script>
+<script src="assets/js/slick.min.js"></script>
 <script src="assets/js/owl.carousel.min.js"></script>
 
 </body>

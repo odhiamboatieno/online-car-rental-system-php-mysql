@@ -52,12 +52,12 @@ $error="Something went wrong. Please try again";
 
 <!-- SWITCHER -->
 		<link rel="stylesheet" id="switcher-css" type="text/css" href="assets/switcher/css/switcher.css" media="all" />
-		<link rel="alternate stylesheet" type="text/css" href="assets/switcher/css/red.css" title="red" media="all" data-default-color="true" />
+		<link rel="alternate stylesheet" type="text/css" href="assets/switcher/css/red.css" title="red" media="all"  />
 		<link rel="alternate stylesheet" type="text/css" href="assets/switcher/css/orange.css" title="orange" media="all" />
 		<link rel="alternate stylesheet" type="text/css" href="assets/switcher/css/blue.css" title="blue" media="all" />
 		<link rel="alternate stylesheet" type="text/css" href="assets/switcher/css/pink.css" title="pink" media="all" />
 		<link rel="alternate stylesheet" type="text/css" href="assets/switcher/css/green.css" title="green" media="all" />
-		<link rel="alternate stylesheet" type="text/css" href="assets/switcher/css/purple.css" title="purple" media="all" />
+		<link rel="alternate stylesheet" type="text/css" href="assets/switcher/css/purple.css" title="purple" media="all" data-default-color="true"/>
         
 <!-- Fav and touch icons -->
 <link rel="apple-touch-icon-precomposed" sizes="144x144" href="assets/images/favicon-icon/apple-touch-icon-144-precomposed.png">
@@ -88,7 +88,7 @@ $error="Something went wrong. Please try again";
 <body>
 
 <!-- Start Switcher -->
-<?php include('includes/colorswitcher.php');?>
+<!-- <?php include('includes/colorswitcher.php');?> -->
 <!-- /Switcher -->  
         
 <!--Header-->
@@ -167,11 +167,11 @@ foreach($results as $result)
             </li>
             <li>
               <div class="icon_wrap"><i class="fa fa-envelope-o" aria-hidden="true"></i></div>
-              <div class="contact_info_m"><a href="tel:+254797049288"><?php   echo htmlentities($result->EmailId); ?></a></div>
+              <div class="contact_info_m"><a href="mailto:<?php   echo htmlentities($result->EmailId); ?>"><?php   echo htmlentities($result->EmailId); ?></a></div>
             </li>
             <li>
               <div class="icon_wrap"><i class="fa fa-phone" aria-hidden="true"></i></div>
-              <div class="contact_info_m"><a href="mailto:odhiambothomas09@gmail.com"><?php   echo htmlentities($result->ContactNo); ?></a></div>
+              <div class="contact_info_m"><a href="tel:<?php   echo htmlentities($result->ContactNo); ?>"><?php   echo htmlentities($result->ContactNo); ?></a></div>
             </li>
           </ul>
         <?php }} ?>

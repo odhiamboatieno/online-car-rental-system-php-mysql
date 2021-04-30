@@ -17,7 +17,7 @@ else{
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="keywords" content="">
 <meta name="description" content="">
-<title>Car Rental Portal | My Testimonials </title>
+<title>Lala Cabs | My Testimonials </title>
 <!--Bootstrap -->
 <link rel="stylesheet" href="assets/css/bootstrap.min.css" type="text/css">
 <!--Custome Style -->
@@ -34,12 +34,12 @@ else{
 
 <!-- SWITCHER -->
 		<link rel="stylesheet" id="switcher-css" type="text/css" href="assets/switcher/css/switcher.css" media="all" />
-		<link rel="alternate stylesheet" type="text/css" href="assets/switcher/css/red.css" title="red" media="all" data-default-color="true" />
+		<link rel="alternate stylesheet" type="text/css" href="assets/switcher/css/red.css" title="red" media="all"  />
 		<link rel="alternate stylesheet" type="text/css" href="assets/switcher/css/orange.css" title="orange" media="all" />
 		<link rel="alternate stylesheet" type="text/css" href="assets/switcher/css/blue.css" title="blue" media="all" />
 		<link rel="alternate stylesheet" type="text/css" href="assets/switcher/css/pink.css" title="pink" media="all" />
 		<link rel="alternate stylesheet" type="text/css" href="assets/switcher/css/green.css" title="green" media="all" />
-		<link rel="alternate stylesheet" type="text/css" href="assets/switcher/css/purple.css" title="purple" media="all" />
+		<link rel="alternate stylesheet" type="text/css" href="assets/switcher/css/purple.css" title="purple" media="all" data-default-color="true"/>
         
 <!-- Fav and touch icons -->
 <link rel="apple-touch-icon-precomposed" sizes="144x144" href="assets/images/favicon-icon/apple-touch-icon-144-precomposed.png">
@@ -51,7 +51,7 @@ else{
 <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900" rel="stylesheet">
 </head>
 <body>
-<?php include('includes/colorswitcher.php');?>
+<!-- <?php include('includes/colorswitcher.php');?> -->
 <!-- /Switcher -->  
         
 <!--Header-->
@@ -89,7 +89,7 @@ foreach($results as $result)
 <section class="user_profile inner_pages">
   <div class="container">
     <div class="user_profile_info gray-bg padding_4x4_40">
-      <div class="upload_user_logo"> <img src="assets/images/companylogo.png" alt="image">
+      <div class="upload_user_logo"> <img src="admin/img/userprofiles/<?php echo htmlentities($result->profilepic);?>" alt="image">
       </div>
 
       <div class="dealer_info">

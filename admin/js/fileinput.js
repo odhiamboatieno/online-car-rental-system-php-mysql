@@ -12,8 +12,8 @@
  * 
  * Author: Kartik Visweswaran
  * Copyright: 2015, Kartik Visweswaran, Krajee.com
- * For more JQuery plugins visit http://plugins.krajee.com
- * For more Yii related demos visit http://demos.krajee.com
+ * For more JQuery plugins visit https://plugins.krajee.com
+ * For more Yii related demos visit https://demos.krajee.com
  */
 (function ($) {
     "use strict";

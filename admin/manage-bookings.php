@@ -49,7 +49,7 @@ $msg="Booking Successfully Confirmed";
 	<meta name="author" content="">
 	<meta name="theme-color" content="#3e454c">
 	
-	<title>Car Rental Portal |Admin Manage testimonials   </title>
+	<title>Lala Cabs |Admin Manage testimonials   </title>
 
 	<!-- Font awesome -->
 	<link rel="stylesheet" href="css/font-awesome.min.css">
@@ -112,13 +112,16 @@ $msg="Booking Successfully Confirmed";
 										<tr>
 										<th>#</th>
 											<th>Name</th>
+											<th>Phone</th>
+											<th>National ID</th>
 					                    <th>Vehicle</th>
 										   <th>Plate Number</th>
+										     <th>Booking Type</th>
 											<th>From Date</th>
 											<th>To Date</th>
 											<th>Message</th>
 											<th>Status</th>
-											<th>Posting date</th>
+											<th>Booking Date</th>
 											<th>Action</th>
 										</tr>
 									</thead>
@@ -126,19 +129,22 @@ $msg="Booking Successfully Confirmed";
 										<tr>
 										<th>#</th>
 										<th>Name</th>
+										<th>Phone</th>
+										<th>National ID</th>
 											<th>Vehicle</th>
 											<th>Plate Number</th>
+											<th>Booking Type</th>
 											<th>From Date</th>
 											<th>To Date</th>
 											<th>Message</th>
 											<th>Status</th>
-											<th>Posting date</th>
+											<th>Booking Date</th>
 											<th>Action</th>
 										</tr>
 									</tfoot>
 									<tbody>
 
-									<?php $sql = "SELECT neorent_users_table.FullName,neorent_vehiclebrands_table.BrandName,neorent_vehicles_table.VehiclesTitle,neorent_vehicles_table.PlateNumber,neorent_booking_table.FromDate,neorent_booking_table.ToDate,neorent_booking_table.message,neorent_booking_table.VehicleId as vid,neorent_booking_table.Status,neorent_booking_table.PostingDate,neorent_booking_table.id  from neorent_booking_table join neorent_vehicles_table on neorent_vehicles_table.id=neorent_booking_table.VehicleId join neorent_users_table on neorent_users_table.EmailId=neorent_booking_table.userEmail join neorent_vehiclebrands_table on neorent_vehicles_table.VehiclesBrand=neorent_vehiclebrands_table.id  ";
+									<?php $sql = "SELECT neorent_users_table.FullName,neorent_users_table.ContactNo,neorent_users_table.nationalid,neorent_vehiclebrands_table.BrandName,neorent_vehicles_table.VehiclesTitle,neorent_vehicles_table.PlateNumber,neorent_booking_table.FromDate,neorent_booking_table.ToDate,neorent_booking_table.message,neorent_booking_table.VehicleId as vid,neorent_booking_table.Status,neorent_booking_table.PostingDate,neorent_booking_table.HireMode,neorent_booking_table.id  from neorent_booking_table join neorent_vehicles_table on neorent_vehicles_table.id=neorent_booking_table.VehicleId join neorent_users_table on neorent_users_table.EmailId=neorent_booking_table.userEmail join neorent_vehiclebrands_table on neorent_vehicles_table.VehiclesBrand=neorent_vehiclebrands_table.id  ";
 $query = $dbh -> prepare($sql);
 $query->execute();
 $results=$query->fetchAll(PDO::FETCH_OBJ);
@@ -150,8 +156,11 @@ foreach($results as $result)
 										<tr>
 											<td><?php echo htmlentities($cnt);?></td>
 											<td><?php echo htmlentities($result->FullName);?></td>
+											<td><?php echo htmlentities($result->ContactNo);?></td>
+											<td><?php echo htmlentities($result->nationalid);?></td>
 											<td><a href="edit-vehicle.php?id=<?php echo htmlentities($result->vid);?>"><?php echo htmlentities($result->BrandName);?> , <?php echo htmlentities($result->VehiclesTitle);?></td>
 											<td><?php echo htmlentities($result->PlateNumber);?></td>
+											<td><?php echo htmlentities($result->HireMode);?></td>
 											<td><?php echo htmlentities($result->FromDate);?></td>
 											<td><?php echo htmlentities($result->ToDate);?></td>
 											<td><?php echo htmlentities($result->message);?></td>

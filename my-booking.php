@@ -15,7 +15,7 @@ else{
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="keywords" content="">
 <meta name="description" content="">
-<title>CarForYou - Responsive Car Dealer HTML5 Template</title>
+<title>Lala Cabs | My Bookings</title>
 <!--Bootstrap -->
 <link rel="stylesheet" href="assets/css/bootstrap.min.css" type="text/css">
 <!--Custome Style -->
@@ -32,12 +32,12 @@ else{
 
 <!-- SWITCHER -->
 		<link rel="stylesheet" id="switcher-css" type="text/css" href="assets/switcher/css/switcher.css" media="all" />
-		<link rel="alternate stylesheet" type="text/css" href="assets/switcher/css/red.css" title="red" media="all" data-default-color="true" />
+		<link rel="alternate stylesheet" type="text/css" href="assets/switcher/css/red.css" title="red" media="all"  />
 		<link rel="alternate stylesheet" type="text/css" href="assets/switcher/css/orange.css" title="orange" media="all" />
 		<link rel="alternate stylesheet" type="text/css" href="assets/switcher/css/blue.css" title="blue" media="all" />
 		<link rel="alternate stylesheet" type="text/css" href="assets/switcher/css/pink.css" title="pink" media="all" />
 		<link rel="alternate stylesheet" type="text/css" href="assets/switcher/css/green.css" title="green" media="all" />
-		<link rel="alternate stylesheet" type="text/css" href="assets/switcher/css/purple.css" title="purple" media="all" />
+		<link rel="alternate stylesheet" type="text/css" href="assets/switcher/css/purple.css" title="purple" media="all" data-default-color="true"/>
         
 <!-- Fav and touch icons -->
 <link rel="apple-touch-icon-precomposed" sizes="144x144" href="assets/images/favicon-icon/apple-touch-icon-144-precomposed.png">
@@ -57,7 +57,7 @@ else{
 <body>
 
 <!-- Start Switcher -->
-<?php include('includes/colorswitcher.php');?>
+<!-- <?php include('includes/colorswitcher.php');?> -->
 <!-- /Switcher -->  
         
 <!--Header-->
@@ -98,7 +98,7 @@ foreach($results as $result)
 <section class="user_profile inner_pages">
   <div class="container">
     <div class="user_profile_info gray-bg padding_4x4_40">
-      <div class="upload_user_logo"> <img src="assets/images/companylogo.png" alt="image">
+      <div class="upload_user_logo"> <img src="admin/img/userprofiles/<?php echo htmlentities($result->profilepic);?>" alt="image">
       </div>
 
       <div class="dealer_info">
@@ -113,12 +113,12 @@ foreach($results as $result)
    
       <div class="col-md-6 col-sm-8">
         <div class="profile_wrap">
-          <h5 class="uppercase underline">My Booikngs </h5>
+          <h5 class="uppercase underline">My Bookings </h5>
           <div class="my_vehicles_list">
             <ul class="vehicle_listing">
 <?php 
 $useremail=$_SESSION['login'];
- $sql = "SELECT neorent_vehicles_table.Vimage1 as Vimage1,neorent_vehicles_table.VehiclesTitle,neorent_vehicles_table.id as vid,neorent_vehiclebrands_table.BrandName,neorent_booking_table.FromDate,neorent_booking_table.ToDate,neorent_booking_table.message,neorent_booking_table.Status  from neorent_booking_table join neorent_vehicles_table on neorent_booking_table.VehicleId=neorent_vehicles_table.id join neorent_vehiclebrands_table on neorent_vehiclebrands_table.id=neorent_vehicles_table.VehiclesBrand where neorent_booking_table.userEmail=:useremail";
+ $sql = "SELECT neorent_vehicles_table.Vimage1 as Vimage1,neorent_vehicles_table.VehiclesTitle,neorent_vehicles_table.id as vid,neorent_vehiclebrands_table.BrandName,neorent_booking_table.FromDate,neorent_booking_table.ToDate,neorent_booking_table.message,neorent_booking_table.Status  from neorent_booking_table join neorent_vehicles_table on neorent_booking_table.VehicleId=neorent_vehicles_table.id join neorent_vehiclebrands_table on neorent_vehiclebrands_table.id=neorent_vehicles_table.VehiclesBrand where neorent_booking_table.userEmail=:useremail ORDER BY vid DESC";
 $query = $dbh -> prepare($sql);
 $query-> bindParam(':useremail', $useremail, PDO::PARAM_STR);
 $query->execute();

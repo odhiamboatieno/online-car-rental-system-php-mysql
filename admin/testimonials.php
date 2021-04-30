@@ -17,7 +17,7 @@ $query -> bindParam(':status',$status, PDO::PARAM_STR);
 $query-> bindParam(':eid',$eid, PDO::PARAM_STR);
 $query -> execute();
 
-$msg="Testimonial Successfully Inacrive";
+$msg="Testimonial Successfully Inactivated";
 }
 
 
@@ -32,7 +32,7 @@ $query -> bindParam(':status',$status, PDO::PARAM_STR);
 $query-> bindParam(':aeid',$aeid, PDO::PARAM_STR);
 $query -> execute();
 
-$msg="Testimonial Successfully Active";
+$msg="Testimonial Successfully Actived";
 }
 
 
@@ -49,7 +49,7 @@ $msg="Testimonial Successfully Active";
 	<meta name="author" content="">
 	<meta name="theme-color" content="#3e454c">
 	
-	<title>Car Rental Portal |Admin Manage testimonials   </title>
+	<title>Lala Cabs |Admin Manage testimonials   </title>
 
 	<!-- Font awesome -->
 	<link rel="stylesheet" href="css/font-awesome.min.css">
@@ -147,10 +147,10 @@ foreach($results as $result)
 											<td><?php echo htmlentities($result->PostingDate);?></td>
 										<td><?php if($result->status=="" || $result->status==0)
 {
-	?><a href="testimonials.php?aeid=<?php echo htmlentities($result->id);?>" onclick="return confirm('Do you really want to Active')"> Inactive</a>
+	?><a href="testimonials.php?aeid=<?php echo htmlentities($result->id);?>" onclick="return confirm('Do you really want to Activate?')"> Inactive</a>
 <?php } else {?>
 
-<a href="testimonials.php?eid=<?php echo htmlentities($result->id);?>" onclick="return confirm('Do you really want to Inactive')"> Active</a>
+<a href="testimonials.php?eid=<?php echo htmlentities($result->id);?>" onclick="return confirm('Do you really want to Inactivate?')"> Active</a>
 </td>
 <?php } ?></td>
 										</tr>

@@ -8,16 +8,16 @@ error_reporting(0);
 <!DOCTYPE HTML>
 <html lang="en">
 <head>
-<!-- Start WOWSlider.com HEAD section -->
-<link rel="stylesheet" type="text/css" href="slider_files/style.css" />
-<script type="text/javascript" src="slider_files/jquery.js"></script>
-<!-- End WOWSlider.com HEAD section -->
+<!-- Start lalacabs.co.ke HEAD section --> <!-- add to the <head> of your page -->
+	<link rel="stylesheet" type="text/css" href="lala-resource/style.css" />
+	<script type="text/javascript" src="lala-resource/jquery.js"></script>
+	<!-- End lalacabs.co.ke HEAD section -->
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="keywords" content="">
 <meta name="description" content="">
-<title>Car Rental Portal</title>
+<title>Lala Cabs | For Best Car  Deals</title>
 <!--Bootstrap -->
 <link rel="stylesheet" href="assets/css/bootstrap.min.css" type="text/css">
 <link rel="stylesheet" href="assets/css/style.css" type="text/css">
@@ -28,12 +28,12 @@ error_reporting(0);
 <link href="assets/css/bootstrap-slider.min.css" rel="stylesheet">
 <link href="assets/css/font-awesome.min.css" rel="stylesheet">
 		<link rel="stylesheet" id="switcher-css" type="text/css" href="assets/switcher/css/switcher.css" media="all" />
-		<link rel="alternate stylesheet" type="text/css" href="assets/switcher/css/red.css" title="red" media="all" data-default-color="true" />
+		<link rel="alternate stylesheet" type="text/css" href="assets/switcher/css/red.css" title="red" media="all"  />
 		<link rel="alternate stylesheet" type="text/css" href="assets/switcher/css/orange.css" title="orange" media="all" />
 		<link rel="alternate stylesheet" type="text/css" href="assets/switcher/css/blue.css" title="blue" media="all" />
 		<link rel="alternate stylesheet" type="text/css" href="assets/switcher/css/pink.css" title="pink" media="all" />
 		<link rel="alternate stylesheet" type="text/css" href="assets/switcher/css/green.css" title="green" media="all" />
-		<link rel="alternate stylesheet" type="text/css" href="assets/switcher/css/purple.css" title="purple" media="all" />
+		<link rel="alternate stylesheet" type="text/css" href="assets/switcher/css/purple.css" title="purple" media="all" data-default-color="true"/>
 <link rel="apple-touch-icon-precomposed" sizes="144x144" href="assets/images/favicon-icon/apple-touch-icon-144-precomposed.png">
 <link rel="apple-touch-icon-precomposed" sizes="114x114" href="assets/images/favicon-icon/apple-touch-icon-114-precomposed.html">
 <link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/images/favicon-icon/apple-touch-icon-72-precomposed.png">
@@ -44,40 +44,35 @@ error_reporting(0);
 <body>
 
 <!-- Start Switcher -->
-<?php include('includes/colorswitcher.php');?>
+<!-- <?php include('includes/colorswitcher.php');?> -->
 <!-- /Switcher -->  
         
 <!--Header-->
 <?php include('includes/header.php');?>
 <!-- /Header --> 
 
-<!-- Start WOWSlider.com BODY section -->
-<div id="wowslider-container1">
-<div class="ws_images"><ul>
-		<li><img src="slider_images/images/bannerimage1.jpg" alt="banner-image-1" title="The Best Car deals" id="wows1_0"/></li>
-		<li><img src="slider_images/images/bannerimage.jpg" alt="banner-image" title="Only at Neo Car Rentals" id="wows1_1"/></li>
-		<li><img src="slider_images/images/blog_img4.jpg" alt="blog_img4" title="Good Pricing" id="wows1_2"/></li>
-		<li><img src="slider_images/images/blog_img2.jpg" alt="blog_img2" title="Quality Services" id="wows1_3"/></li>
-		<li><img src="slider_images/images/listing_img4.jpg" alt="listing_img4" title="Better Customer Care" id="wows1_4"/></li>
-		<li><img src="slider_images/images/listing_img3.jpg" alt="listing_img3" title="Easy Service Procedures" id="wows1_5"/></li>
-		<li><a href="http://odhiammbotomm.epizy.com"><img src="slider_images/images/listing_img2.jpg" alt="slider jquery" title="Premium Services" id="wows1_6"/></a></li>
-		<li><img src="slider_images/images/support_faq_bg.jpg" alt="support_faq_bg" title="support_faq_bg" id="wows1_7"/></li>
+<!-- Start lalacabs.co.ke BODY section --> <!-- add to the <body> of your page -->
+	<div id="wowslider-container1">
+	<div class="ws_images"><ul>
+		<li><img src="lala/images/20200413_01_09_s.jpg" alt="20200413_01_09_s" title="20200413_01_09_s" id="wows1_0"/></li>
+		<li><img src="lala/images/047665817c9d390e395df2d98db58753.jpg" alt="047665817c9d390e395df2d98db58753" title="047665817c9d390e395df2d98db58753" id="wows1_1"/></li>
+		<li><img src="lala/images/gallery_img_car06563x350.jpg" alt="gallery_img_car06-563x350" title="gallery_img_car06-563x350" id="wows1_2"/></li>
+		<li><img src="lala/images/maxresdefault.jpg" alt="maxresdefault" title="maxresdefault" id="wows1_3"/></li>
+		<li><img src="lala/images/001.jpg" alt="001" title="001" id="wows1_4"/></li>
+		<li><img src="lala/images/2nd_toyota_ractis_2.jpg" alt="2nd_Toyota_Ractis_2" title="2nd_Toyota_Ractis_2" id="wows1_5"/></li>
+		<li><img src="lala/images/3.01_mercedesbenzcarskeyvisual_slider_01.jpg" alt="3.01_mercedes-benz-cars-keyvisual_slider_01" title="3.01_mercedes-benz-cars-keyvisual_slider_01" id="wows1_6"/></li>
+		<li><img src="lala/images/2010_toyota_premio_01.jpg" alt="2010_Toyota_Premio_01" title="2010_Toyota_Premio_01" id="wows1_7"/></li>
+		<li><img src="lala/images/2014_toyota_crown_majesta_4.jpg" alt="2014 Toyota Crown Majesta (4)" title="2014 Toyota Crown Majesta (4)" id="wows1_8"/></li>
+		<li><img src="lala/images/2018_lexus_ls500_0019_d53e71648f63b7130b8bd75a8d380010c6ddc028_low.jpg" alt="2018_Lexus_LS500_0019_D53E71648F63B7130B8BD75A8D380010C6DDC028_low" title="2018_Lexus_LS500_0019_D53E71648F63B7130B8BD75A8D380010C6DDC028_low" id="wows1_9"/></li>
+		<li><a href="http://lalacabs.co.ke"><img src="lala/images/2018toyotalandcruiser1545163407.jpg" alt="css image slider" title="2018-toyota-land-cruiser-1545163407" id="wows1_10"/></a></li>
+		<li><img src="lala/images/2019nissanxtrailtiltreviewfrontsideheadw.jpg" alt="2019-nissan-x-trail-Ti-LT-review-front-side-head-w" title="2019-nissan-x-trail-Ti-LT-review-front-side-head-w" id="wows1_11"/></li>
 	</ul></div>
-	<div class="ws_bullets"><div>
-		<a href="#" title="banner-image-1"><span><img src="slider_images/tooltips/bannerimage1.jpg" alt="banner-image-1"/>1</span></a>
-		<a href="#" title="banner-image"><span><img src="slider_images/tooltips/bannerimage.jpg" alt="banner-image"/>2</span></a>
-		<a href="#" title="blog_img4"><span><img src="slider_images/tooltips/blog_img4.jpg" alt="blog_img4"/>3</span></a>
-		<a href="#" title="blog_img2"><span><img src="slider_images/tooltips/blog_img2.jpg" alt="blog_img2"/>4</span></a>
-		<a href="#" title="listing_img4"><span><img src="slider_images/tooltips/listing_img4.jpg" alt="listing_img4"/>5</span></a>
-		<a href="#" title="listing_img3"><span><img src="slider_images/tooltips/listing_img3.jpg" alt="listing_img3"/>6</span></a>
-		<a href="#" title="listing_img2"><span><img src="slider_images/tooltips/listing_img2.jpg" alt="listing_img2"/>7</span></a>
-		<a href="#" title="support_faq_bg"><span><img src="slider_images/tooltips/support_faq_bg.jpg" alt="support_faq_bg"/>8</span></a>
-	</div></div>
-<div class="ws_shadow"></div>
-</div>	
-<script type="text/javascript" src="slider_files/wowslider.js"></script>
-<script type="text/javascript" src="slider_files/script.js"></script>
-<!-- End WOWSlider.com BODY section -->
+<div class="ws_script" style="position:absolute;left:-99%"><a href="http://lalacabs.co.ke">wow slider</a> by lalacabs.co.ke v9.0</div>
+	<div class="ws_shadow"></div>
+	</div>	
+	<script type="text/javascript" src="lala-resource/wowslider.js"></script>
+	<script type="text/javascript" src="lala-resource/script.js"></script>
+	<!-- End lalacabs.co.ke BODY section -->
 
 <!-- Resent Cat-->
 <section class="section-padding gray-bg">
@@ -115,7 +110,7 @@ foreach($results as $result)
 </div>
 <div class="car-title-m">
 <h6><a href="vehical-details.php?vhid=<?php echo htmlentities($result->id);?>"><?php echo htmlentities($result->BrandName);?> , <?php echo htmlentities($result->VehiclesTitle);?>,  <?php echo htmlentities($result->PlateNumber);?></a></h6>
-<span class="price">$<?php echo htmlentities($result->PricePerDay);?> /Day</span> 
+<span class="price">Ksh <?php echo htmlentities($result->PricePerDay);?>/Day</span> 
 </div>
 <div class="inventory_info_m">
 <p><?php echo substr($result->VehiclesOverview,0,70);?></p>
@@ -145,7 +140,7 @@ foreach($results as $result)
       <div class="col-lg-3 col-xs-6 col-sm-3">
         <div class="fun-facts-m">
           <div class="cell">
-            <h2><i class="fa fa-car" aria-hidden="true"></i>1200+</h2>
+            <h2><i class="fa fa-car" aria-hidden="true"></i>100+</h2>
             <p>New Cars For Rent</p>
           </div>
         </div>
@@ -153,7 +148,7 @@ foreach($results as $result)
       <div class="col-lg-3 col-xs-6 col-sm-3">
         <div class="fun-facts-m">
           <div class="cell">
-            <h2><i class="fa fa-book" aria-hidden="true"></i>800+</h2>
+            <h2><i class="fa fa-book" aria-hidden="true"></i>50+</h2>
             <p>Bookings per day</p>
           </div>
         </div>
@@ -161,7 +156,7 @@ foreach($results as $result)
       <div class="col-lg-3 col-xs-6 col-sm-3">
         <div class="fun-facts-m">
           <div class="cell">
-            <h2><i class="fa fa-users" aria-hidden="true"></i>600+</h2>
+            <h2><i class="fa fa-users" aria-hidden="true"></i>500+</h2>
             <p>Satisfied Customers</p>
           </div>
         </div>
@@ -184,7 +179,7 @@ foreach($results as $result)
       <div id="testimonial-slider">
 <?php 
 $tid=1;
-$sql = "SELECT neorent_testimonials_table.Testimonial,neorent_users_table.FullName from neorent_testimonials_table join neorent_users_table on neorent_testimonials_table.UserEmail=neorent_users_table.EmailId where neorent_testimonials_table.status=:tid";
+$sql = "SELECT neorent_testimonials_table.Testimonial,neorent_users_table.FullName,neorent_users_table.profilepic from neorent_testimonials_table join neorent_users_table on neorent_testimonials_table.UserEmail=neorent_users_table.EmailId where neorent_testimonials_table.status=:tid";
 $query = $dbh -> prepare($sql);
 $query->bindParam(':tid',$tid, PDO::PARAM_STR);
 $query->execute();
@@ -197,7 +192,7 @@ foreach($results as $result)
 
 
         <div class="testimonial-m">
-          <div class="testimonial-img"> <img src="assets/images/Testimonialpic.png" alt="" /> </div>
+          <div class="testimonial-img"> <img src="admin/img/userprofiles/<?php echo htmlentities($result->profilepic);?>" alt="" /> </div>
           <div class="testimonial-content">
             <div class="testimonial-heading">
               <h5><?php echo htmlentities($result->FullName);?></h5>

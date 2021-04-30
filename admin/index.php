@@ -34,7 +34,7 @@ echo "<script type='text/javascript'> document.location = 'dashboard.php'; </scr
 	<meta name="description" content="">
 	<meta name="author" content="">
 
-	<title>Car Rental Portal | Admin Login</title>
+	<title>Lala Cabs | Admin Login</title>
 	<link rel="stylesheet" href="css/font-awesome.min.css">
 	<link rel="stylesheet" href="css/bootstrap.min.css">
 	<link rel="stylesheet" href="css/dataTables.bootstrap.min.css">
@@ -46,14 +46,19 @@ echo "<script type='text/javascript'> document.location = 'dashboard.php'; </scr
 </head>
 
 <body>
+<style>
+.bk-white, .bk-light {
+    background: #1c71da96;
+}
+</style>
 	
 	<div class="login-page bk-img" style="background-image: url(img/login-bg.jpg);">
 		<div class="form-content">
 			<div class="container">
 				<div class="row">
 					<div class="col-md-6 col-md-offset-3">
-						<h1 class="text-center text-bold text-light mt-4x">NeoCarrentals Admin Login</h1>
-						<div class="well row pt-2x pb-3x bk-light">
+						<h1 class="text-center text-bold text-light mt-4x">Lala Cabs Admin Login</h1>
+						<div class="well row pt-2x pb-3x bk-light" style="background:#1c71da9;">
 							<div class="col-md-8 col-md-offset-2">
 								<form method="post">
 

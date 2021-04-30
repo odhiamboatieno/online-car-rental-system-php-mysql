@@ -38,7 +38,7 @@ $msg="Profile Updated Successfully";
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="keywords" content="">
 <meta name="description" content="">
-<title>Car Rental Portal | My Profile</title>
+<title>Lala Cabs | My Profile</title>
 <!--Bootstrap -->
 <link rel="stylesheet" href="assets/css/bootstrap.min.css" type="text/css">
 <!--Custome Style -->
@@ -55,12 +55,12 @@ $msg="Profile Updated Successfully";
 
 <!-- SWITCHER -->
 		<link rel="stylesheet" id="switcher-css" type="text/css" href="assets/switcher/css/switcher.css" media="all" />
-		<link rel="alternate stylesheet" type="text/css" href="assets/switcher/css/red.css" title="red" media="all" data-default-color="true" />
+		<link rel="alternate stylesheet" type="text/css" href="assets/switcher/css/red.css" title="red" media="all"  />
 		<link rel="alternate stylesheet" type="text/css" href="assets/switcher/css/orange.css" title="orange" media="all" />
 		<link rel="alternate stylesheet" type="text/css" href="assets/switcher/css/blue.css" title="blue" media="all" />
 		<link rel="alternate stylesheet" type="text/css" href="assets/switcher/css/pink.css" title="pink" media="all" />
 		<link rel="alternate stylesheet" type="text/css" href="assets/switcher/css/green.css" title="green" media="all" />
-		<link rel="alternate stylesheet" type="text/css" href="assets/switcher/css/purple.css" title="purple" media="all" />
+		<link rel="alternate stylesheet" type="text/css" href="assets/switcher/css/purple.css" title="purple" media="all" data-default-color="true"/>
 <link rel="apple-touch-icon-precomposed" sizes="144x144" href="assets/images/favicon-icon/apple-touch-icon-144-precomposed.png">
 <link rel="apple-touch-icon-precomposed" sizes="114x114" href="assets/images/favicon-icon/apple-touch-icon-114-precomposed.html">
 <link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/images/favicon-icon/apple-touch-icon-72-precomposed.png">
@@ -89,7 +89,7 @@ $msg="Profile Updated Successfully";
 <body>
 
 <!-- Start Switcher -->
-<?php include('includes/colorswitcher.php');?>
+<!-- <?php include('includes/colorswitcher.php');?> -->
 <!-- /Switcher -->  
         
 <!--Header-->
@@ -129,13 +129,20 @@ foreach($results as $result)
 <section class="user_profile inner_pages">
   <div class="container">
     <div class="user_profile_info gray-bg padding_4x4_40">
-      <div class="upload_user_logo"> <img src="assets/images/companylogo.png" alt="image">
-      </div>
+      <div class="upload_user_logo"> <img src="admin/img/userprofiles/<?php echo htmlentities($result->profilepic);?>" alt="image">
+   
+              	
+								
+												<a href="changeprofilepic.php">	<button class="3" style="background-color:#6054c2; color:black; border-radius:10px; height:30px; width:150px; margin-top:20px;" name="update" type="submit">Update Image</button> </a>
+												</div>
+										
+     
 
       <div class="dealer_info">
         <h5><?php echo htmlentities($result->FullName);?></h5>
-        <p><?php echo htmlentities($result->Address);?><br>
-          <?php echo htmlentities($result->City);?>&nbsp;<?php echo htmlentities($result->Country);?></p>
+        <p>My Adress:  <strong><?php echo htmlentities($result->Address);?></strong><br>
+        <p>My Id Number:  <strong><?php echo htmlentities($result->nationalid);?></strong><br>
+          My Location:  <strong><?php echo htmlentities($result->City);?>&nbsp;<?php echo htmlentities($result->Country);?></strong></p>
       </div>
     </div>
   
@@ -144,7 +151,7 @@ foreach($results as $result)
         <?php include('includes/sidebar.php');?>
       <div class="col-md-6 col-sm-8">
         <div class="profile_wrap">
-          <h5 class="uppercase underline">Genral Settings</h5>
+          <h5 class="uppercase underline">General Settings</h5>
           <?php  
          if($msg){?><div class="succWrap"><strong>SUCCESS</strong>:<?php echo htmlentities($msg); ?> </div><?php }?>
           <form  method="post">
@@ -180,12 +187,13 @@ foreach($results as $result)
             </div>
             <div class="form-group">
               <label class="control-label">Country</label>
-              <input class="form-control white_bg"  id="country" name="country" value="<?php echo htmlentities($result->City);?>" type="text">
+              <input class="form-control white_bg"  id="country" name="country" value="<?php echo htmlentities($result->Country);?>" type="text">
             </div>
             <div class="form-group">
               <label class="control-label">City</label>
               <input class="form-control white_bg" id="city" name="city" value="<?php echo htmlentities($result->City);?>" type="text">
             </div>
+           
             <?php }} ?>
            
             <div class="form-group">
@@ -199,7 +207,7 @@ foreach($results as $result)
 </section>
 <!--/Profile-setting--> 
 
-<<!--Footer -->
+<!--Footer -->
 <?php include('includes/footer.php');?>
 <!-- /Footer--> 
 

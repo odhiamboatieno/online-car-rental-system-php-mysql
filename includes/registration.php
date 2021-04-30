@@ -4,13 +4,15 @@ if(isset($_POST['signup']))
 {
 $fname=$_POST['fullname'];
 $email=$_POST['emailid']; 
+$nationalid=$_POST['nationalid'];
 $mobile=$_POST['mobileno'];
 $password=md5($_POST['password']); 
-$sql="INSERT INTO  neorent_users_table(FullName,EmailId,ContactNo,Password) VALUES(:fname,:email,:mobile,:password)";
+$sql="INSERT INTO  neorent_users_table(FullName,EmailId,ContactNo,nationalid,Password) VALUES(:fname,:email,:mobile,:nationalid,:password)";
 $query = $dbh->prepare($sql);
 $query->bindParam(':fname',$fname,PDO::PARAM_STR);
 $query->bindParam(':email',$email,PDO::PARAM_STR);
 $query->bindParam(':mobile',$mobile,PDO::PARAM_STR);
+$query->bindParam(':nationalid',$nationalid,PDO::PARAM_STR);
 $query->bindParam(':password',$password,PDO::PARAM_STR);
 $query->execute();
 $lastInsertId = $dbh->lastInsertId();
@@ -75,6 +77,9 @@ return true;
                 <div class="form-group">
                   <input type="email" class="form-control" name="emailid" id="emailid" onBlur="checkAvailability()" placeholder="Email Address" required="required">
                    <span id="user-availability-status" style="font-size:12px;"></span> 
+                </div>
+                <div class="form-group">
+                  <input type="text" class="form-control" name="nationalid" placeholder="National Id" maxlength="10" required="required">
                 </div>
                 <div class="form-group">
                   <input type="password" class="form-control" name="password" placeholder="Password" required="required">

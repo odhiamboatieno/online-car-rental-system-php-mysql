@@ -94,7 +94,7 @@ $error="Something went wrong. Please try again";
 	<meta name="author" content="">
 	<meta name="theme-color" content="#3e454c">
 	
-	<title>Car Rental Portal | Admin Post Vehicle</title>
+	<title>Lala Cabs | Admin Post Vehicle</title>
 
 	<!-- Font awesome -->
 	<link rel="stylesheet" href="css/font-awesome.min.css">
@@ -189,7 +189,7 @@ foreach($results as $result)
 </div>
 
 <div class="form-group">
-<label class="col-sm-2 control-label">Price Per Day(in USD)<span style="color:red">*</span></label>
+<label class="col-sm-2 control-label">Price Per Day(in Ksh)<span style="color:red">*</span></label>
 <div class="col-sm-4">
 <input type="text" name="priceperday" class="form-control" required>
 </div>

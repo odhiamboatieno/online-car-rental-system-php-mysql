@@ -73,7 +73,7 @@ $msg="Data updated successfully";
 	<meta name="author" content="">
 	<meta name="theme-color" content="#3e454c">
 	
-	<title>Car Rental Portal | Admin Edit Vehicle Info</title>
+	<title>Lala Cabs | Admin Edit Vehicle Info</title>
 
 	<!-- Font awesome -->
 	<link rel="stylesheet" href="css/font-awesome.min.css">
@@ -182,7 +182,7 @@ continue;
 </div>
 
 <div class="form-group">
-<label class="col-sm-2 control-label">Price Per Day(in USD)<span style="color:red">*</span></label>
+<label class="col-sm-2 control-label">Price Per Day(in Ksh)<span style="color:red">*</span></label>
 <div class="col-sm-4">
 <input type="text" name="priceperday" class="form-control" value="<?php echo htmlentities($result->PricePerDay);?>" required>
 </div>

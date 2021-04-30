@@ -1,4 +1,4 @@
-@import url(http://fonts.googleapis.com/css?family=Lato:300,400,700,900,100italic,300italic,400italic);
+@import url(https://fonts.googleapis.com/css?family=Lato:300,400,700,900,100italic,300italic,400italic);
 @import url(https://fonts.googleapis.com/css?family=Oswald:700,400,300);
 /****************************
 *   FOR RESPONSIVENESS      *
@@ -95,13 +95,13 @@ a:hover {
 *      Background Colors        *
 ****************************/
 .bk-primary {
-  background: #9c27b0;
+  background: #000000;
 }
 .bk-success {
   background: #001298;
 }
 .bk-warning {
-  background: #ff073e;
+  background: #1b7b03;
 }
 .bk-danger {
   background: #d9534f;
@@ -461,7 +461,7 @@ a:hover {
   padding: 0 !important;
 }
 /*
- * Theme Struck - Harmony - Free responsive Bootstrap admin template by Themestruck.com (http://themestruck.com)
+ * Theme Struck - Harmony - Free responsive Bootstrap admin template by Themestruck.com (https://themestruck.com)
  * Code licensed under the MIT
  * For details, see #
  */

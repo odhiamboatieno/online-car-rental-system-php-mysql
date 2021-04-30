@@ -33,7 +33,7 @@ $msg="Page data updated  successfully";
 	<meta name="author" content="">
 	<meta name="theme-color" content="#3e454c">
 	
-	<title>Car Rental Portal |Admin Manage Brands   </title>
+	<title>Lala Cabs |Admin Manage Brands   </title>
 
 	<!-- Font awesome -->
 	<link rel="stylesheet" href="css/font-awesome.min.css">

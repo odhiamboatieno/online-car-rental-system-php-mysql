@@ -4,7 +4,7 @@ session_start();
 error_reporting(0);
 include('includes/config.php');
 if(strlen($_SESSION['login'])==0)
-  { 
+  {
 header('location:index.php');
 }
 else{
@@ -29,7 +29,7 @@ $chngpwd1->execute();
 $msg="Your Password succesfully changed";
 }
 else {
-$error="Your current password is wrong";  
+$error="Your current password is wrong";
 }
 }
 
@@ -42,7 +42,7 @@ $error="Your current password is wrong";
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="keywords" content="">
 <meta name="description" content="">
-<title>CarForYou - Responsive Car Dealer HTML5 Template</title>
+<title>Lala Cabs | Update Password</title>
 <!--Bootstrap -->
 <link rel="stylesheet" href="assets/css/bootstrap.min.css" type="text/css">
 <!--Custome Style -->
@@ -59,13 +59,13 @@ $error="Your current password is wrong";
 
 <!-- SWITCHER -->
 		<link rel="stylesheet" id="switcher-css" type="text/css" href="assets/switcher/css/switcher.css" media="all" />
-		<link rel="alternate stylesheet" type="text/css" href="assets/switcher/css/red.css" title="red" media="all" data-default-color="true" />
+		<link rel="alternate stylesheet" type="text/css" href="assets/switcher/css/red.css" title="red" media="all"  />
 		<link rel="alternate stylesheet" type="text/css" href="assets/switcher/css/orange.css" title="orange" media="all" />
 		<link rel="alternate stylesheet" type="text/css" href="assets/switcher/css/blue.css" title="blue" media="all" />
 		<link rel="alternate stylesheet" type="text/css" href="assets/switcher/css/pink.css" title="pink" media="all" />
 		<link rel="alternate stylesheet" type="text/css" href="assets/switcher/css/green.css" title="green" media="all" />
-		<link rel="alternate stylesheet" type="text/css" href="assets/switcher/css/purple.css" title="purple" media="all" />
-        
+		<link rel="alternate stylesheet" type="text/css" href="assets/switcher/css/purple.css" title="purple" media="all" data-default-color="true"/>
+
 <!-- Fav and touch icons -->
 <link rel="apple-touch-icon-precomposed" sizes="144x144" href="assets/images/favicon-icon/apple-touch-icon-144-precomposed.png">
 <link rel="apple-touch-icon-precomposed" sizes="114x114" href="assets/images/favicon-icon/apple-touch-icon-114-precomposed.html">
@@ -108,12 +108,12 @@ return true;
 <body>
 
 <!-- Start Switcher -->
-<?php include('includes/colorswitcher.php');?>
-<!-- /Switcher -->  
-        
+<!-- <?php include('includes/colorswitcher.php');?> -->
+<!-- /Switcher -->
+
 <!--Header-->
 <?php include('includes/header.php');?>
-<!-- /Header --> 
+<!-- /Header -->
 <!--Page Header-->
 <section class="page-header profile_page">
   <div class="container">
@@ -130,9 +130,9 @@ return true;
   <!-- Dark Overlay-->
   <div class="dark-overlay"></div>
 </section>
-<!-- /Page Header--> 
+<!-- /Page Header-->
 
-<?php 
+<?php
 $useremail=$_SESSION['login'];
 $sql = "SELECT * from neorent_users_table where EmailId=:useremail";
 $query = $dbh -> prepare($sql);
@@ -147,7 +147,7 @@ foreach($results as $result)
 <section class="user_profile inner_pages">
   <div class="container">
     <div class="user_profile_info gray-bg padding_4x4_40">
-      <div class="upload_user_logo"> <img src="assets/images/companylogo.png" alt="image">
+      <div class="upload_user_logo"> <img src="admin/img/userprofiles/<?php echo htmlentities($result->profilepic);?>" alt="image">
       </div>
 
       <div class="dealer_info">
@@ -162,11 +162,11 @@ foreach($results as $result)
       <div class="col-md-6 col-sm-8">
         <div class="profile_wrap">
 <form name="chngpwd" method="post" onSubmit="return valid();">
-        
+
             <div class="gray-bg field-title">
               <h6>Update password</h6>
             </div>
-             <?php if($error){?><div class="errorWrap"><strong>ERROR</strong>:<?php echo htmlentities($error); ?> </div><?php } 
+             <?php if($error){?><div class="errorWrap"><strong>ERROR</strong>:<?php echo htmlentities($error); ?> </div><?php }
         else if($msg){?><div class="succWrap"><strong>SUCCESS</strong>:<?php echo htmlentities($msg); ?> </div><?php }?>
             <div class="form-group">
               <label class="control-label">Current Password</label>
@@ -181,7 +181,7 @@ foreach($results as $result)
               <label class="control-label">Confirm Password</label>
               <input class="form-control white_bg" id="confirmpassword" type="password" name="confirmpassword"  required>
             </div>
-          
+
             <div class="form-group">
                <input type="submit" value="Update" name="update" id="submit" class="btn btn-block">
             </div>
@@ -191,39 +191,39 @@ foreach($results as $result)
     </div>
   </div>
 </section>
-<!--/Profile-setting--> 
+<!--/Profile-setting-->
 
 <<!--Footer -->
 <?php include('includes/footer.php');?>
-<!-- /Footer--> 
+<!-- /Footer-->
 
 <!--Back to top-->
 <div id="back-top" class="back-top"> <a href="#top"><i class="fa fa-angle-up" aria-hidden="true"></i> </a> </div>
-<!--/Back to top--> 
+<!--/Back to top-->
 
 <!--Login-Form -->
 <?php include('includes/login.php');?>
-<!--/Login-Form --> 
+<!--/Login-Form -->
 
 <!--Register-Form -->
 <?php include('includes/registration.php');?>
 
-<!--/Register-Form --> 
+<!--/Register-Form -->
 
 <!--Forgot-password-Form -->
 <?php include('includes/forgotpassword.php');?>
-<!--/Forgot-password-Form --> 
+<!--/Forgot-password-Form -->
 
-<!-- Scripts --> 
+<!-- Scripts -->
 <script src="assets/js/jquery.min.js"></script>
-<script src="assets/js/bootstrap.min.js"></script> 
-<script src="assets/js/interface.js"></script> 
+<script src="assets/js/bootstrap.min.js"></script>
+<script src="assets/js/interface.js"></script>
 <!--Switcher-->
 <script src="assets/switcher/js/switcher.js"></script>
-<!--bootstrap-slider-JS--> 
-<script src="assets/js/bootstrap-slider.min.js"></script> 
-<!--Slider-JS--> 
-<script src="assets/js/slick.min.js"></script> 
+<!--bootstrap-slider-JS-->
+<script src="assets/js/bootstrap-slider.min.js"></script>
+<!--Slider-JS-->
+<script src="assets/js/slick.min.js"></script>
 <script src="assets/js/owl.carousel.min.js"></script>
 
 </body>

@@ -37,7 +37,7 @@ $msg="Image updated successfully";
 	<meta name="author" content="">
 	<meta name="theme-color" content="#3e454c">
 	
-	<title>Car Rental Portal | Admin Update Image 5</title>
+	<title>Lala Cabs | Admin Update Image 5</title>
 
 	<!-- Font awesome -->
 	<link rel="stylesheet" href="css/font-awesome.min.css">

@@ -39,7 +39,7 @@ $error="Something went wrong. Please try again";
 	<meta name="author" content="">
 	<meta name="theme-color" content="#3e454c">
 	
-	<title>Car Rental Portal | Admin Create Brand</title>
+	<title>Lala Cabs | Admin Create Brand</title>
 
 	<!-- Font awesome -->
 	<link rel="stylesheet" href="css/font-awesome.min.css">

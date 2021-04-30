@@ -33,7 +33,7 @@ $msg="Page data updated  successfully";
 	<meta name="author" content="">
 	<meta name="theme-color" content="#3e454c">
 	
-	<title>Car Rental Portal |Admin Manage testimonials   </title>
+	<title>Lala Cabs |Admin Manage testimonials   </title>
 
 	<!-- Font awesome -->
 	<link rel="stylesheet" href="css/font-awesome.min.css">
@@ -98,6 +98,7 @@ $msg="Page data updated  successfully";
 												<th> Name</th>
 											<th>Email </th>
 											<th>Contact no</th>
+											<th>National ID</th>
 										<th>DOB</th>
 										<th>Address</th>
 										<th>City</th>
@@ -112,6 +113,7 @@ $msg="Page data updated  successfully";
 											<th> Name</th>
 											<th>Email </th>
 											<th>Contact no</th>
+											<th>National ID</th>
 										<th>DOB</th>
 										<th>Address</th>
 										<th>City</th>
@@ -136,6 +138,7 @@ foreach($results as $result)
 											<td><?php echo htmlentities($result->FullName);?></td>
 											<td><?php echo htmlentities($result->EmailId);?></td>
 											<td><?php echo htmlentities($result->ContactNo);?></td>
+												<td><?php echo htmlentities($result->nationalid);?></td>
 	<td><?php echo htmlentities($result->dob);?></td>
 											<td><?php echo htmlentities($result->Address);?></td>
 											<td><?php echo htmlentities($result->City);?></td>
