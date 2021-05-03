@@ -100,7 +100,7 @@ $msg="Profile Updated Successfully";
   <div class="container">
     <div class="page-header_wrap">
       <div class="page-heading">
-        <h1>Your Profile</h1>
+        <h1>My Profile</h1>
       </div>
       <ul class="coustom-breadcrumb">
         <li><a href="#">Home</a></li>
@@ -156,7 +156,7 @@ foreach($results as $result)
          if($msg){?><div class="succWrap"><strong>SUCCESS</strong>:<?php echo htmlentities($msg); ?> </div><?php }?>
           <form  method="post">
            <div class="form-group">
-              <label class="control-label">Reg Date -</label>
+              <label class="control-label">Registration Date -</label>
              <?php echo htmlentities($result->RegDate);?>
             </div>
              <?php if($result->UpdationDate!=""){?>
