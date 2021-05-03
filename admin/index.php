@@ -62,7 +62,7 @@ echo "<script type='text/javascript'> document.location = 'dashboard.php'; </scr
 							<div class="col-md-8 col-md-offset-2">
 								<form method="post">
 
-									<label for="" class="text-uppercase text-sm">Your Username </label>
+									<label for="" class="text-uppercase text-sm">Admin Username </label>
 									<input type="text" placeholder="Username" name="username" class="form-control mb">
 
 									<label for="" class="text-uppercase text-sm">Password</label>
