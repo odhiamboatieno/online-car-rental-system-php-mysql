@@ -149,7 +149,7 @@ foreach($results as $result)
 
 
                 <?php } else { ?>
- <div class="vehicle_status"> <a href="#" class="btn outline btn-xs">Not Confirm yet</a>
+ <div class="vehicle_status"> <a href="#" class="btn outline btn-xs">Not yet Confirmed</a>
             <div class="clearfix"></div>
         </div>
                 <?php } ?>
