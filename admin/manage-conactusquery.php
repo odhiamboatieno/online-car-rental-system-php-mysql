@@ -85,7 +85,7 @@ $msg="Testimonial Successfully Inacrive";
 				<div class="row">
 					<div class="col-md-12">
 
-						<h2 class="page-title">Manage Contact Us Queries</h2>
+						<h2 class="page-title">Manage Contact Queries</h2>
 
 						<!-- Zero Configuration Table -->
 						<div class="panel panel-default">
