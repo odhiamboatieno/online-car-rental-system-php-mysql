@@ -127,7 +127,7 @@ foreach($results as $result)
            
                 <div>
                  <p><?php echo htmlentities($result->Testimonial);?> </p>
-                   <p><b>Posting Date:</b><?php echo htmlentities($result->PostingDate);?> </p>
+                   <p><b>Date Posted:</b><?php echo htmlentities($result->PostingDate);?> </p>
                 </div>
                 <?php if($result->status==1){ ?>
                  <div class="vehicle_status"> <a class="btn outline btn-xs active-btn">Active</a>
