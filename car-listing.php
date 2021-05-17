@@ -128,7 +128,7 @@ foreach($results as $result)
             <form action="search-carresult.php" method="post">
               <div class="form-group select">
                 <select class="form-control" name="brand">
-                  <option>Select Brand</option>
+                  <option>Select A Brand</option>
 
                   <?php $sql = "SELECT * from  neorent_vehiclebrands_table ";
 $query = $dbh -> prepare($sql);
