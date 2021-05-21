@@ -83,7 +83,7 @@ $msg="Page data updated  successfully";
 				<div class="row">
 					<div class="col-md-12">
 
-						<h2 class="page-title">Manage Brands</h2>
+						<h2 class="page-title">Manage Vehicle Brands</h2>
 
 						<!-- Zero Configuration Table -->
 						<div class="panel panel-default">
