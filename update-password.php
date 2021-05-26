@@ -174,7 +174,7 @@ foreach($results as $result)
             </div>
             <div cl
             <div class="form-group">
-              <label class="control-label">Password</label>
+              <label class="control-label">New Password</label>
               <input class="form-control white_bg" id="newpassword" type="password" name="newpassword" required>
             </div>
             <div class="form-group">
