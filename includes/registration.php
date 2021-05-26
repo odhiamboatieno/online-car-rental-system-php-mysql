@@ -101,7 +101,7 @@ return true;
         </div>
       </div>
       <div class="modal-footer text-center">
-        <p>Already got an account? <a href="#loginform" data-toggle="modal" data-dismiss="modal">Login Here</a></p>
+        <p>Already Registered an account? <a href="#loginform" data-toggle="modal" data-dismiss="modal">Login Here</a></p>
       </div>
     </div>
   </div>
