@@ -79,7 +79,7 @@ echo "<script>alert('Something went wrong. Please try again');</script>";
           </div>
         </div>
         <div class="col-md-6 col-md-pull-6">
-          <p class="copy-right">Copyright &copy; 2020   Lala Cabs All Rights Reserved.</p>
+          <p class="copy-right">Copyright &copy; 2020   Lala Cabs All Rights Reserved. Designed and Developed By <a href="https://odhiamboatieno.com">Odhiambo Atieno</a></p>
         </div>
       </div>
     </div>
