@@ -154,7 +154,7 @@ foreach($results as $result)
               </div>
              
               <div class="form-group">
-                <button type="submit" class="btn btn-block"><i class="fa fa-search" aria-hidden="true"></i> Search Car</button>
+                <button type="submit" class="btn btn-block"><i class="fa fa-search" aria-hidden="true"></i> Find Car</button>
               </div>
             </form>
           </div>
