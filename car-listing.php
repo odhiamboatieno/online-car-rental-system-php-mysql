@@ -162,7 +162,7 @@ foreach($results as $result)
 
         <div class="sidebar_widget">
           <div class="widget_heading">
-            <h5><i class="fa fa-car" aria-hidden="true"></i> Recently Listed Cars</h5>
+            <h5><i class="fa fa-car" aria-hidden="true"></i> Recently Added Vehicles</h5>
           </div>
           <div class="recent_addedcars">
             <ul>
