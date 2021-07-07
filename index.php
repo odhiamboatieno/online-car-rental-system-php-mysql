@@ -79,7 +79,7 @@ error_reporting(0);
   <div class="container">
     <div class="section-header text-center">
     <h2>Find the Best <span>CarForYou</span></h2>
-      <p>Car Rental Offers You an new ride in town,you can comfortably enjoy the ride in very elegant and new car models.Be sure we provide the best delivery in terms of our services.</p>
+      <p>Car Rental Offers You an new ride in town,you can comfortably enjoy the ride in very elegant and new car models.Be sure we provide the best delivery in terms of our services. Lalacabs</p>
     </div>
     <div class="row"> 
       
