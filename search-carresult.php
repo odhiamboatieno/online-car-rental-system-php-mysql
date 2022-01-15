@@ -91,7 +91,7 @@ $query->execute();
 $results=$query->fetchAll(PDO::FETCH_OBJ);
 $cnt=$query->rowCount();
 ?>
-<p><span><?php echo htmlentities($cnt);?> Matches Found</span></p>
+<p><span><?php echo htmlentities($cnt);?> Cars Found</span></p>
 </div>
 </div>
 
@@ -161,7 +161,7 @@ foreach($results as $result)
               </div>
              
               <div class="form-group">
-                <button type="submit" class="btn btn-block"><i class="fa fa-search" aria-hidden="true"></i> Search Car</button>
+                <button type="submit" class="btn btn-block"><i class="fa fa-search" aria-hidden="true"></i> Search a Car</button>
               </div>
             </form>
           </div>
