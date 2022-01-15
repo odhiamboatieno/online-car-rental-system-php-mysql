@@ -135,7 +135,7 @@ foreach($results as $result)
                   <div class="clearfix"></div>
                   </div>
                   <?php } else {?>
-               <div class="vehicle_status"> <a href="#" class="btn outline btn-xs">Waiting for approval</a>
+               <div class="vehicle_status"> <a href="#" class="btn outline btn-xs">Waiting for Approval</a>
                   <div class="clearfix"></div>
                   </div>
                   <?php } ?>
