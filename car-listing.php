@@ -83,7 +83,7 @@ error_reporting(0);
 //Query for Listing count
 $sql = "SELECT id from neorent_vehicles_table";
 $query = $dbh -> prepare($sql);
-$query->bindParam(':vhid',$vhid, PDO::PARAM_STR);
+// $query->bindParam(':vhid',$vhid, PDO::PARAM_STR);
 $query->execute();
 $results=$query->fetchAll(PDO::FETCH_OBJ);
 $cnt=$query->rowCount();

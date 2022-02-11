@@ -7,10 +7,10 @@
           <div class="logo"> <a href="index.php"><img src="assets/images/logo.png" alt="image"/></a> </div>
         </div>
          <?php 
-$pagetype=$_GET['type'];
+// $pagetype=$_GET['type'];
 $sql = "SELECT Address,EmailId,ContactNo from neorent_contactus_table";
 $query = $dbh -> prepare($sql);
-$query->bindParam(':pagetype',$pagetype,PDO::PARAM_STR);
+// $query->bindParam(':pagetype',$pagetype,PDO::PARAM_STR);
 $query->execute();
 $results=$query->fetchAll(PDO::FETCH_OBJ);
 $cnt=1;
@@ -38,7 +38,7 @@ foreach($results as $result)
               </ul>
                     <?php }} ?>
             </div>
-   <?php   if(strlen($_SESSION['login'])==0)
+   <?php   if(!isset($_SESSION['login']))
 	{	
 ?>
  <div class="login_btn"> <a href="#loginform" class="btn btn-xs uppercase" data-toggle="modal" data-dismiss="modal">Login / Register</a> </div>
@@ -64,7 +64,7 @@ echo "";
           <ul>
             <li class="dropdown"> <a href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-user-circle" aria-hidden="true"></i> 
 <?php 
-$email=$_SESSION['login'];
+$email= isset($_SESSION['login']) ? $_SESSION['login'] : "";
 $sql ="SELECT FullName FROM neorent_users_table WHERE EmailId=:email ";
 $query= $dbh -> prepare($sql);
 $query-> bindParam(':email', $email, PDO::PARAM_STR);
@@ -77,7 +77,7 @@ foreach($results as $result)
 
 	 echo htmlentities($result->FullName); }}?><i class="fa fa-angle-down" aria-hidden="true"></i></a>
               <ul class="dropdown-menu">
-           <?php if($_SESSION['login']){?>
+           <?php if(isset($_SESSION['login'])){?>
             <li><a href="profile.php">Profile Settings</a></li>
               <li><a href="update-password.php">Update Password</a></li>
             <li><a href="my-booking.php">My Booking</a></li>

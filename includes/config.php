@@ -1,8 +1,8 @@
 <?php 
 // DB credentials.
 define('DB_HOST','localhost');
-define('DB_USER','root');
-define('DB_PASS','');
+define('DB_USER','neorentdb');
+define('DB_PASS','(ZH9.uIIdQihpPm[');
 define('DB_NAME','neorentdb');
 // Establish database connection.
 try
