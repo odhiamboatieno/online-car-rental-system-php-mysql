@@ -1,7 +1,7 @@
 <?php 
 session_start();
 include('includes/config.php');
-error_reporting(0);
+// error_reporting(0);
 
 ?>
 
@@ -179,7 +179,7 @@ foreach($results as $result)
       <div id="testimonial-slider">
 <?php 
 $tid=1;
-$sql = "SELECT neorent_testimonials_table.Testimonial,neorent_users_table.FullName,neorent_users_table.profilepic from neorent_testimonials_table join neorent_users_table on neorent_testimonials_table.UserEmail=neorent_users_table.EmailId where neorent_testimonials_table.status=:tid";
+$sql = "SELECT neorent_testimonials_table.Testimonial,neorent_users_table.FullName from neorent_testimonials_table join neorent_users_table on neorent_testimonials_table.UserEmail=neorent_users_table.EmailId where neorent_testimonials_table.status=:tid";
 $query = $dbh -> prepare($sql);
 $query->bindParam(':tid',$tid, PDO::PARAM_STR);
 $query->execute();
